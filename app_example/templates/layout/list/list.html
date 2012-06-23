@@ -1,0 +1,33 @@
+{% extends "layout/base.html" %}
+
+{% block title %}Lista de mensajes{% endblock %}
+
+{% block content %}
+
+    {% if page_entries %}
+		{% for sms in page_entries.object_list %}
+			<p><strong>Nombre</strong>: {{ sms.name }}</p>
+			<p><strong>Telefono</strong>: {{ sms.phone }}</p>
+			<p><strong>Asunto</strong>: {{ sms.asunto }}</p>
+			<p><strong>Mensaje</strong>: {{ sms.message }}</p>
+		-----------------------------------------------------------
+		{% endfor %}
+		{% else %}
+			<p>No hay mensajes para mostrar</p>
+	{% endif %}
+
+	<hr />
+
+	{% if page_entries.has_previous %}
+		<a href="?page={{ page_entries.previous_page_number }}">Anterior</a>
+	{% endif %}
+
+	<span class="current">
+		Page {{ page_entries.number }} of {{ page_entries.paginator.num_pages }}.
+	</span>
+
+	{% if page_entries.has_next %}
+		<a href="?page={{ page_entries.next_page_number }}">Siguiente</a>
+	{% endif %}
+        
+{% endblock %}

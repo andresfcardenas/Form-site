@@ -1,0 +1,32 @@
+<!doctype html>
+<head>
+    <title>aplicacion de ejemplo {% block title %}{% endblock %}</title>
+</head>
+
+<body>    
+    {% block page %}
+
+    {% block header %}
+    <header>
+        <strong>Header</strong>
+        <ul class="menu">
+            <li><a href="{% url home %}" class="nav_selected"> Home </a></li>
+            <li><a href="{% url contact_form %}" class="nav"> Contactenos </a></li>
+            <li><a href="{% url list %}" class="nav"> Lista de mensajes </a></li>
+        </ul>
+        <hr />  
+    </header>
+    {% endblock header %}
+    
+        {% block content %}{% endblock content %}
+    
+    {% block footer %}
+    <footer>
+        <hr />
+        <strong>footer<strong>
+    </footer>
+    {% endblock footer %}
+    
+    {% endblock %}    
+</body>
+</html>
