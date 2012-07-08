@@ -29,3 +29,17 @@ necesidad de tener que instalar git en tu computadora.
 
 Una vez te hagas con el codigo fuente podemos continuar.
 
+
+Creacion de base de datos
+-------------------------
+
+Solo he probado esta aplicacion con postgresql version 9.1, pero probablemente
+tambien sirva con mysql y sqlite.
+
+para la creacion de la base de datos en postgres, primero tenermos que entrar
+a psql con el usuario postgres y crear un nuevo usuario que solo tenga permisos
+sobre nuestra nueva base de datos, hace con la siguiente linea de codigo.
+
+
+CREATE ROLE nombreNuevoUsuario LOGIN ENCRYPTED PASSWORD 'passNuevoUsuario' NOINHERIT VALID UNTIL 'infinity';
+CREATE DATABASE nombreNuevaDB WITH ENCODING='UTF8' OWNER=nombreNuevoUsuario TEMPLATE=template0;
