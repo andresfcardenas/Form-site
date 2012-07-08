@@ -43,3 +43,50 @@ sobre nuestra nueva base de datos, hace con la siguiente linea de codigo.
 
 CREATE ROLE nombreNuevoUsuario LOGIN ENCRYPTED PASSWORD 'passNuevoUsuario' NOINHERIT VALID UNTIL 'infinity';
 CREATE DATABASE nombreNuevaDB WITH ENCODING='UTF8' OWNER=nombreNuevoUsuario TEMPLATE=template0;
+
+Configuracion de la base de datos
+---------------------------------
+
+Para configurar en nuestra aplicacion la base de datos que necesitamos es necesario 
+abrir el archivo llamado settings.py ubicado en la carpeta app_example, cuando este
+archivo este este abierto tenemos que modificar las siguientes lineas:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'dbapp',                      # Or path to database file if using sqlite3.
+        'USER': 'postgres',                      # Not used with sqlite3.
+        'PASSWORD': '123456',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
+    }
+}
+
+La variable ENGINE especifica el controlador de nuestra base de datos, si nuestro
+motor de base de datos es postresql la definicion de esta variables seria
+
+'ENGINE': 'django.db.backends.postgresql_psycopg2',
+
+si es mysql seria:
+
+'ENGINE': 'django.db.backends.mysql',
+
+y si es sqlite seria:
+
+'ENGINE': 'django.db.backends.sqlite3',
+
+
+En la variable NAME se especifica el nombre de nuestra base de datos creada con
+anterioridad.
+
+Las Variables USER y PASSWORD, definen el usuario de la base de datos con su respectiva
+contraseña.
+
+La variable HOST es donde se especifica la direccion ip de la maquina donde se aloja la
+db, si se esta usando una base de datos local se dajaria este campo vacio o se escribiria
+localhost.
+
+Por ultimo, en la variable PORT es en donde se especifica el puerto de escucha del motor
+de la base de datos.
+
+Para la configuracion total de este archivo se pueden seguir al pie de la letra los comentarios
