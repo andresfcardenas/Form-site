@@ -8,13 +8,11 @@ Para hacer funcionar esta pequeña aplicacion, lo que se recomienda es hacer es
 utilizar virtualenvwrapper y pip, los cuales pueden ser instalados por medio
 del gestor de paquetes de su distribucion favorita o por medio de easy_install.
 
-Pagina del proyecto pip:
-^^^^^^^^^^^^^^^^^^^^^^^^
+* Pagina del proyecto pip:
 
 http://www.pip-installer.org/en/latest/index.html
 
-Pagina del proyecto virtualenvwrapper:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Pagina del proyecto virtualenvwrapper:
 
 http://www.doughellmann.com/projects/virtualenvwrapper/
 
