@@ -101,3 +101,40 @@ Por ultimo, en la variable PORT es en donde se especifica el puerto de escucha d
 de la base de datos.
 
 Para la configuracion total de este archivo se pueden seguir al pie de la letra los comentarios
+
+
+Instalacion de aplicaciones y librerias
+---------------------------------------
+
+Primero tenemos que instalar django y otras libreria con pip, esto se hace de la siguiente manera:
+
+* pip install django
+* pip install south
+* pip install django-uniform
+* pip install psycopg2
+
+
+Sincronizar la aplicacion con la base de datos
+----------------------------------------------
+
+Ahora que ya configuramos la base de datos, lo que tendriamos que hacer es sincronizar nuestra
+aplicacion con la base de datos, para hacer esto, tenemos que ir al dirctorio raiz del proyecto
+y ejecutar la siguiente linea:
+
+./manage.py syncdb --all
+
+Cuando se ejecuta el anterior comando las tablas de nuestra aplicacion se crean en la base de datos
+y nos pedira un nombre de usuario de administracion con la clave.
+
+
+Hechar a andar nuestra aplicacion
+---------------------------------
+
+Despues de haber terminado de sincronizar nuestra aplicacion podemos correr la aplicacion con el
+siguiente comando:
+
+./manage.py runserver
+
+
+Para acceder a la aplicacion es necesario entrar a un navegador y digitar en la barra de direcciones
+http://localhost:8000
